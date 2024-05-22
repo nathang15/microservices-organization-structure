@@ -1,5 +1,10 @@
 package company.employeeservice;
 
+import io.swagger.v3.oas.annotations.ExternalDocumentation;
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.info.Contact;
+import io.swagger.v3.oas.annotations.info.Info;
+import io.swagger.v3.oas.annotations.info.License;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
@@ -7,6 +12,26 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.reactive.function.client.WebClient;
 
+@OpenAPIDefinition(
+		info = @Info(
+				title = "Employee Service REST APIs",
+				description = "Employee Service API doc",
+				version = "v1.0",
+				contact = @Contact(
+						name = "Nathan",
+						email = "test@mail.com",
+						url = "https://example.com"
+				),
+				license = @License(
+						name = "Apache 2.0",
+						url = "https://example.com"
+				)
+		),
+		externalDocs = @ExternalDocumentation(
+				description = "Department-Service Doc",
+				url = "https://example.com"
+		)
+)
 @SpringBootApplication
 @EnableFeignClients
 public class EmployeeServiceApplication {
